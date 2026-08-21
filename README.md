@@ -176,7 +176,7 @@ Open the published project here:
 
 1. Clone or download the repository.
 2. Keep the existing folder structure intact so the page can still find its styles, scripts, data, and assets.
-3. Open the root `index.html` for static projects, or follow the project-specific runtime instructions when a backend/source application is included.
+3. Start the project using the runtime and entry point included in this repository.
 4. Before I publish changes, I check the main workflow, navigation, saved browser data where it applies, and the responsive layout.
 
 </details>
@@ -186,7 +186,7 @@ Open the published project here:
 <details open>
 <summary><h3><strong>GitHub Pages Deployment 🌐</strong></h3></summary>
 
-For the static/public portion, keep `index.html` at the repository root, use relative asset paths, then enable **Settings → Pages → Deploy from a branch → main → / (root)**. Projects that include Python, Node, MongoDB, authentication, browser automation, or another server runtime still need an appropriate backend host for those server-dependent features.
+For GitHub Pages deployment, keep the published entry point and relative assets in the structure used by this repository, then enable **Settings → Pages → Deploy from a branch → main → / (root)**. If this project uses a separate service, keep that service configured as documented in the project files.
 
 </details>
 
@@ -269,7 +269,7 @@ This tree highlights the major documented areas rather than inventing files that
 
 PunctuOwlity separates the event itself from the reminder decision. An event can be created and displayed without pretending that a static GitHub Pages site can send real SMS messages. The SMS page documents and demonstrates the permission step, while the browser-side controls preserve the intended user flow.
 
-The event layout was also designed around the original mobile proportions. Date numbers, event titles, time, reminder icons, and action controls remain readable as the viewport changes instead of collapsing into an unrelated desktop layout.
+The event layout is designed around compact mobile proportions. Date numbers, event titles, time, reminder icons, and action controls remain readable as the viewport changes instead of collapsing into an unrelated desktop layout.
 
 </details>
 
@@ -306,7 +306,7 @@ The public interface should remain keyboard-navigable, readable at common mobile
 
 **PunctuOwlity** is documented as its own project. Supporting case studies, articles, source history, static presentation layers, or backend/runtime folders are parts of this repository only when they help explain or run this project. They should not be described as separate replacement projects.
 
-Where this repository contains both a static GitHub Pages layer and source that requires another runtime, the two are related but not interchangeable: the static layer provides the public experience that can run in a browser, while the source/runtime layer preserves functionality that GitHub Pages cannot execute directly.
+This repository contains the current project files, assets, documentation, and implementation used to maintain and publish the project. I keep the repository structure aligned with the working project so the README describes what is actually here.
 
 </details>
 
@@ -317,7 +317,7 @@ Where this repository contains both a static GitHub Pages layer and source that 
 <details open>
 <summary><h2><strong>Project Scope and Limitations 📌</strong></h2></summary>
 
-This README separates what the published browser version can do from functionality that belongs to a backend, database, native application, notebook, or other runtime. Static hosting limitations are stated where they materially affect the project. The documentation should not imply that GitHub Pages is providing server-side authentication, Python execution, MongoDB access, SMS delivery, or another service it cannot actually run.
+This README documents the current project as it exists in this repository. I only call out a hosting or runtime limitation when it directly affects how a feature works or how the project must be run.
 
 </details>
 
@@ -395,7 +395,7 @@ No license terms are assumed here. If the repository includes a `LICENSE` file, 
 <details open>
 <summary><h2><strong>Copyright ©️</strong></h2></summary>
 
-© 2026 Alysha Pursley. Project documentation and original project materials are credited to their respective sources where applicable.
+© 2026 Alysha Pursley. All rights reserved unless a repository license states otherwise.
 
 
 ---
