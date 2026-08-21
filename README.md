@@ -7,7 +7,9 @@ Date: August 2026
 
 <div align="center">
 
-<h1>PunctuOwlity 🦉</h1>
+<img src="assets/punctuowlity-logo.png" alt="PunctuOwlity Event Tracking logo" width="65%">
+
+<h1>PunctuOwlity Event Tracking 🦉</h1>
 
 <p><a href="https://github.com/apursley2012/punctuowlity/stargazers"><img src="https://img.shields.io/github/stars/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Stars" alt="Stars"></a> <a href="https://github.com/apursley2012/punctuowlity/forks"><img src="https://img.shields.io/github/forks/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Forks" alt="Forks"></a> <a href="https://github.com/apursley2012/punctuowlity/issues"><img src="https://img.shields.io/github/issues/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Issues" alt="Issues"></a> <a href="https://github.com/apursley2012/punctuowlity/commits"><img src="https://img.shields.io/github/last-commit/apursley2012/punctuowlity?style=for-the-badge&amp;logo=git&amp;label=Last%20Commit" alt="Last Commit"></a> <a href="https://github.com/apursley2012/punctuowlity"><img src="https://img.shields.io/github/repo-size/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Repo%20Size" alt="Repo Size"></a> <a href="https://github.com/apursley2012/punctuowlity"><img src="https://img.shields.io/github/languages/top/apursley2012/punctuowlity?style=for-the-badge&amp;label=Top%20Language" alt="Top Language"></a></p>
 
