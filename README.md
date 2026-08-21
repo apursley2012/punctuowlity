@@ -7,9 +7,9 @@ Date: August 2026
 
 <div align="center">
 
-<img src="assets/punctuowlity-logo.png" alt="PunctuOwlity Event Tracking logo" width="65%">
+<img src="assets/punctuowlity-logo.png" alt="PunctuOwlity Event Tracking logo" width=“65%”>
 
-<h1>PunctuOwlity Event Tracking 🦉</h1>
+<h1>PunctuOwlity 🦉</h1>
 
 <p><a href="https://github.com/apursley2012/punctuowlity/stargazers"><img src="https://img.shields.io/github/stars/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Stars" alt="Stars"></a> <a href="https://github.com/apursley2012/punctuowlity/forks"><img src="https://img.shields.io/github/forks/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Forks" alt="Forks"></a> <a href="https://github.com/apursley2012/punctuowlity/issues"><img src="https://img.shields.io/github/issues/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Issues" alt="Issues"></a> <a href="https://github.com/apursley2012/punctuowlity/commits"><img src="https://img.shields.io/github/last-commit/apursley2012/punctuowlity?style=for-the-badge&amp;logo=git&amp;label=Last%20Commit" alt="Last Commit"></a> <a href="https://github.com/apursley2012/punctuowlity"><img src="https://img.shields.io/github/repo-size/apursley2012/punctuowlity?style=for-the-badge&amp;logo=github&amp;label=Repo%20Size" alt="Repo Size"></a> <a href="https://github.com/apursley2012/punctuowlity"><img src="https://img.shields.io/github/languages/top/apursley2012/punctuowlity?style=for-the-badge&amp;label=Top%20Language" alt="Top Language"></a></p>
 
@@ -52,7 +52,7 @@ Date: August 2026
     *   [Requesting Additions 📝](#requesting-additions)
 *   [License 📜](#license)
 *   [Important Links 🔗](#important-links)
-*   [Copyright ©️](#copyright)
+*   [Attribution ℹ️](#attribution)
 
 ---
 
@@ -61,7 +61,15 @@ Date: August 2026
 <details open>
 <summary><h2><strong>Project Overview 🔎</strong></h2></summary>
 
-I developed **PunctuOwlity** as an owl-themed event planning application with event creation, date-based views, reminders, SMS-permission flow, account screens, responsive layouts, and supporting project writing.
+
+
+
+
+**PunctuOwlity** is an owl-themed event and reminder planner designed to make everyday scheduling easier to scan and manage. It combines date-based planning, upcoming-event views, search, account controls, and reminder-oriented workflows in one interface without turning the calendar into a wall of competing information.
+
+I built the experience around quick recognition. Dates, event details, actions, and reminder controls are visually separated so a user can understand what is coming up, locate a specific event, and make changes without digging through several layers of navigation. The owl identity gives the application personality, but the planning workflow stays practical and predictable.
+
+The project is intended for repeated everyday use, so responsive behavior and browser-side persistence are part of the product rather than decorative extras. The goal is a planner that remains approachable on smaller screens and still keeps saved scheduling information available between visits.
 
 </details>
 
@@ -70,14 +78,18 @@ I developed **PunctuOwlity** as an owl-themed event planning application with ev
 <details open>
 <summary><h3><strong>Purpose 🎯</strong></h3></summary>
 
-I built PunctuOwlity around a simple idea: event planning should feel easy to scan instead of looking like another dense calendar. The interface keeps dates visually prominent, uses clear event cards, and gives the reminder workflow its own space. The owl identity gives the project personality, but the actual focus is still on creating events, finding what is coming up, and managing reminder-related choices without making the user dig through a complicated interface.
 
+
+
+I created **PunctuOwlity** for people who need a straightforward way to keep track of events and reminders without working through a crowded calendar interface. The app keeps upcoming dates easy to scan, gives events clear visual separation, and supports reminder-focused workflows so important plans are less likely to disappear into a dense schedule. The purpose is to make everyday planning faster and more approachable while still giving the application a distinctive identity instead of feeling like another generic calendar.
 </details>
 
 <a id="design-style-and-inspiration"></a>
 
 <details open>
 <summary><h3><strong>Design Style and Inspiration 🎨</strong></h3></summary>
+
+
 
 I designed **PunctuOwlity** around its owl identity to make scheduling and reminders feel friendly without turning the interface into a novelty. Deep navy keeps the layout grounded while coral and turquoise provide clear accents for actions, event types, and emphasis. The softer page background keeps forms, calendars, reminders, and supporting content readable, while the playful branding gives the project a recognizable personality across screens.
 
@@ -88,15 +100,21 @@ I designed **PunctuOwlity** around its owl identity to make scheduling and remin
 <details open>
 <summary><h3><strong>Main Color Palette 🌈</strong></h3></summary>
 
+
+
+
+
 I pulled the palette below directly from the current project stylesheet `styles.css`.
 
-| Hex | Color Name | Primary Use |
+Each row lists every interface-use category identified for that exact color value in the documented stylesheet analysis. When one hex value is reused for several jobs, I keep all of those uses together in the same row instead of reducing it to a single generic label.
+
+| Hex | Color Name | Complete Use in the Interface |
 | --- | --- | --- |
-| `#000050` | Deep Navy | Primary brand color, headings, navigation, and high-contrast structure |
+| `#000050` | Deep Navy | Primary brand color; headings; navigation; and high-contrast structure |
 | `#F1575D` | Coral | Primary accent and action color |
-| `#2FC7C9` | Turquoise | Secondary accent, highlights, and interactive details |
+| `#2FC7C9` | Turquoise | Secondary accent; highlights; and interactive details |
 | `#C7D8EA` | Powder Blue | Main page background and soft visual surface |
-| `#FFFFFF` | White | Cards, form surfaces, and high-contrast text or panels |
+| `#FFFFFF` | White | Cards; form surfaces; and high-contrast text or panels |
 | `#168BDE` | Bright Blue | Event-grid outline and selected interface details |
 
 </details>
@@ -105,6 +123,8 @@ I pulled the palette below directly from the current project stylesheet `styles.
 
 <details open>
 <summary><h3><strong>Preview Screenshots 🖼️</strong></h3></summary>
+
+
 
 Click any preview image in the repository screenshot folder to open the full-size file.
 
@@ -123,6 +143,8 @@ The gallery uses paired, centered images when screenshots are present. Keep scre
 <details open>
 <summary><h2><strong>Key Features ✨</strong></h2></summary>
 
+
+
 *   **Create and display events with dates and times**
 *   **Switch between date-oriented event views**
 *   **Search through event information**
@@ -140,6 +162,8 @@ The gallery uses paired, centered images when screenshots are present. Keep scre
 <details open>
 <summary><h2><strong>Tech Stack 🛠️</strong></h2></summary>
 
+
+
 *   **HTML**
 *   **CSS**
 *   **JavaScript**
@@ -156,6 +180,8 @@ The gallery uses paired, centered images when screenshots are present. Keep scre
 <details open>
 <summary><h2><strong>Live Demo 🚀</strong></h2></summary>
 
+
+
 Open the published project here:
 
 [https://apursley2012.github.io/punctuowlity/](https://apursley2012.github.io/punctuowlity/)
@@ -169,6 +195,8 @@ Open the published project here:
 <details open>
 <summary><h2><strong>Installation 📦</strong></h2></summary>
 
+
+
 </details>
 
 <a id="local-use"></a>
@@ -176,9 +204,11 @@ Open the published project here:
 <details open>
 <summary><h3><strong>Local Use 💻</strong></h3></summary>
 
+
+
 1. Clone or download the repository.
 2. Keep the existing folder structure intact so the page can still find its styles, scripts, data, and assets.
-3. Start the project using the runtime and entry point included in this repository.
+3. Open the root `index.html` for static projects, or follow the project-specific runtime instructions when a backend/source application is included.
 4. Before I publish changes, I check the main workflow, navigation, saved browser data where it applies, and the responsive layout.
 
 </details>
@@ -188,7 +218,9 @@ Open the published project here:
 <details open>
 <summary><h3><strong>GitHub Pages Deployment 🌐</strong></h3></summary>
 
-For GitHub Pages deployment, keep the published entry point and relative assets in the structure used by this repository, then enable **Settings → Pages → Deploy from a branch → main → / (root)**. If this project uses a separate service, keep that service configured as documented in the project files.
+
+
+For the static/public portion, keep `index.html` at the repository root, use relative asset paths, then enable **Settings → Pages → Deploy from a branch → main → / (root)**. Projects that include Python, Node, MongoDB, authentication, browser automation, or another server runtime still need an appropriate backend host for those server-dependent features.
 
 </details>
 
@@ -198,6 +230,8 @@ For GitHub Pages deployment, keep the published entry point and relative assets 
 
 <details open>
 <summary><h2><strong>Usage 🧭</strong></h2></summary>
+
+
 
 Start with the main page and follow the project’s primary workflow. The interface is intended to be usable without reading the source first, while the case studies, articles, documentation, and source folders provide the deeper implementation context. Where browser storage is used, saved information belongs to that browser/device unless the project explicitly includes a shared backend.
 
@@ -210,12 +244,16 @@ Start with the main page and follow the project’s primary workflow. The interf
 <details open>
 <summary><h2><strong>Project Structure 🗂️</strong></h2></summary>
 
+
+
 </details>
 
 <a id="pages-included"></a>
 
 <details open>
 <summary><h3><strong>Pages Included 📄</strong></h3></summary>
+
+
 
 | Page / Area | Purpose |
 | --- | --- |
@@ -236,6 +274,8 @@ Start with the main page and follow the project’s primary workflow. The interf
 <details open>
 <summary><h3><strong>Core Files and Architecture 🧩</strong></h3></summary>
 
+
+
 The repository separates the public interface from supporting source and documentation where the project needs that distinction. The important rule is that **PunctuOwlity should be documented as the project it is**, not as a generic theme or one-size-fits-all site. Files that implement the main workflow belong with the application, while case studies, articles, source history, data, or backend code are documented according to their real role.
 
 </details>
@@ -244,6 +284,8 @@ The repository separates the public interface from supporting source and documen
 
 <details open>
 <summary><h3><strong>File and Folder Structure 🌳</strong></h3></summary>
+
+
 
 ```text
 punctuowlity/
@@ -269,9 +311,11 @@ This tree highlights the major documented areas rather than inventing files that
 <details open>
 <summary><h2><strong>Event and Reminder Workflow ⏰ ⚙️</strong></h2></summary>
 
+
+
 PunctuOwlity separates the event itself from the reminder decision. An event can be created and displayed without pretending that a static GitHub Pages site can send real SMS messages. The SMS page documents and demonstrates the permission step, while the browser-side controls preserve the intended user flow.
 
-The event layout is designed around compact mobile proportions. Date numbers, event titles, time, reminder icons, and action controls remain readable as the viewport changes instead of collapsing into an unrelated desktop layout.
+The event layout was also designed around the original mobile proportions. Date numbers, event titles, time, reminder icons, and action controls remain readable as the viewport changes instead of collapsing into an unrelated desktop layout.
 
 </details>
 
@@ -281,6 +325,8 @@ The event layout is designed around compact mobile proportions. Date numbers, ev
 
 <details open>
 <summary><h2><strong>Customization Guide 🎨</strong></h2></summary>
+
+
 
 The safest way to customize or extend **PunctuOwlity** is to preserve its existing workflow first, then change one layer at a time. Update project content and data in the files that already own that information, keep visual changes inside the existing style system, and test every page that shares the changed component or data source. New features should solve a problem that belongs to this project instead of copying a feature from an unrelated application.
 
@@ -295,6 +341,8 @@ For visual changes, update the documented palette intentionally and re-check con
 <details open>
 <summary><h2><strong>Accessibility and Browser Compatibility ♿</strong></h2></summary>
 
+
+
 The public interface should remain keyboard-navigable, readable at common mobile and desktop widths, and usable without relying on color alone to communicate state. Form controls should keep visible labels or accessible names, images should use meaningful `alt` text, focus indicators should remain visible, and decorative animation should respect reduced-motion preferences when motion is present. Browser compatibility should be checked in current Safari, Chrome, Firefox, and Edge where practical.
 
 </details>
@@ -306,9 +354,11 @@ The public interface should remain keyboard-navigable, readable at common mobile
 <details open>
 <summary><h2><strong>Repository Relationship 🔗</strong></h2></summary>
 
+
+
 **PunctuOwlity** is documented as its own project. Supporting case studies, articles, source history, static presentation layers, or backend/runtime folders are parts of this repository only when they help explain or run this project. They should not be described as separate replacement projects.
 
-This repository contains the current project files, assets, documentation, and implementation used to maintain and publish the project. I keep the repository structure aligned with the working project so the README describes what is actually here.
+Where this repository contains both a static GitHub Pages layer and source that requires another runtime, the two are related but not interchangeable: the static layer provides the public experience that can run in a browser, while the source/runtime layer preserves functionality that GitHub Pages cannot execute directly.
 
 </details>
 
@@ -319,7 +369,9 @@ This repository contains the current project files, assets, documentation, and i
 <details open>
 <summary><h2><strong>Project Scope and Limitations 📌</strong></h2></summary>
 
-This README documents the current project as it exists in this repository. I only call out a hosting or runtime limitation when it directly affects how a feature works or how the project must be run.
+
+
+This README separates what the published browser version can do from functionality that belongs to a backend, database, native application, notebook, or other runtime. Static hosting limitations are stated where they materially affect the project. The documentation should not imply that GitHub Pages is providing server-side authentication, Python execution, MongoDB access, SMS delivery, or another service it cannot actually run.
 
 </details>
 
@@ -329,6 +381,8 @@ This README documents the current project as it exists in this repository. I onl
 
 <details open>
 <summary><h2><strong>Possible Future Enhancements 💡</strong></h2></summary>
+
+
 
 *   Connect reminder preferences to an authenticated notification service if the project gains a backend
 *   Add recurring events and richer recurrence editing
@@ -344,6 +398,8 @@ This README documents the current project as it exists in this repository. I onl
 <details open>
 <summary><h2><strong>Contributing 🤝</strong></h2></summary>
 
+
+
 Contributions, bug reports, and practical improvement suggestions are welcome when they preserve the existing project direction and do not replace its identity with a generic redesign.
 
 </details>
@@ -353,6 +409,8 @@ Contributions, bug reports, and practical improvement suggestions are welcome wh
 <details open>
 <summary><h3><strong>Reporting Issues 🐛</strong></h3></summary>
 
+
+
 When reporting a problem, include the page or workflow involved, what you expected, what actually happened, browser/device information when relevant, and a screenshot if the issue is visual.
 
 </details>
@@ -361,6 +419,8 @@ When reporting a problem, include the page or workflow involved, what you expect
 
 <details open>
 <summary><h3><strong>Requesting Additions 📝</strong></h3></summary>
+
+
 
 Feature requests should explain the user problem the addition would solve and how it fits the existing project. Project-specific improvements are preferred over adding features only because they are common in other applications.
 
@@ -373,6 +433,8 @@ Feature requests should explain the user problem the addition would solve and ho
 <details open>
 <summary><h2><strong>License 📜</strong></h2></summary>
 
+
+
 No license terms are assumed here. If the repository includes a `LICENSE` file, that file controls reuse. If it does not, normal copyright applies and permission should not be inferred from the repository being public.
 
 </details>
@@ -384,6 +446,8 @@ No license terms are assumed here. If the repository includes a `LICENSE` file, 
 <details open>
 <summary><h2><strong>Important Links 🔗</strong></h2></summary>
 
+
+
 *   **Live Project:** [https://apursley2012.github.io/punctuowlity/](https://apursley2012.github.io/punctuowlity/)
 *   **Repository:** [https://github.com/apursley2012/punctuowlity](https://github.com/apursley2012/punctuowlity)
 *   **Issues / Requests:** [https://github.com/apursley2012/punctuowlity/issues/new/choose](https://github.com/apursley2012/punctuowlity/issues/new/choose)
@@ -392,16 +456,22 @@ No license terms are assumed here. If the repository includes a `LICENSE` file, 
 
 ---
 
-<a id="copyright"></a>
+<a id="attribution"></a>
 
 <details open>
-<summary><h2><strong>Copyright ©️</strong></h2></summary>
+<summary><h2><strong>Attribution ℹ️</strong></h2></summary>
 
-© 2026 Alysha Pursley. All rights reserved unless a repository license states otherwise.
 
+Project documentation and original project materials are credited to their respective sources where applicable.
+
+</details>
 
 ---
 
-Made with care by Alysha Pursley.
+<div align=center>
+   
+***Made with ❤️ and a bit of 🪄.***
+<br>
+**©️ 2026 Alysha Pursley. All Rights Reserved.**
 
-</details>
+</div>
