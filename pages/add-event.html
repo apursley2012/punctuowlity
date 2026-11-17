@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /add-event.html                                                       *
+ * Purpose: Presents the shared add/edit event form.                           *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>Add/Edit An Event | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/buttons.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/feedback.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/pages/add-event.css"
+			rel="stylesheet" />
+		<meta
+			content="Add or edit a PunctuOwlity event with its date, time, category, and optional reminder setting."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="add">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="event-form-page"
+			id="main-content">
+			<h1>Add/Edit An Event</h1>
+			<form id="eventForm">
+				<label class="plain-field">
+					<span class="sr-only">Event title</span>
+					<input
+						id="eventTitle"
+						maxlength="120"
+						placeholder="Enter event title"
+						required="" />
+				</label>
+				<label class="plain-field">
+					<span class="field-label">Event date</span>
+					<span class="picker-field">
+						<input
+							id="eventDate"
+							required=""
+							type="date"
+							aria-label="Event date" />
+						<span
+							class="picker-display"
+							id="eventDateDisplay"
+							aria-hidden="true">
+							Choose a date
+						</span>
+						<span
+							class="picker-symbol"
+							aria-hidden="true">
+							▦
+						</span>
+					</span>
+				</label>
+				<label class="plain-field">
+					<span class="field-label">Event time</span>
+					<span class="picker-field">
+						<input
+							id="eventTime"
+							required=""
+							type="time"
+							aria-label="Event time" />
+						<span
+							class="picker-display"
+							id="eventTimeDisplay"
+							aria-hidden="true">
+							Choose a time
+						</span>
+						<span
+							class="picker-symbol"
+							aria-hidden="true">
+							◷
+						</span>
+					</span>
+				</label>
+				<label class="plain-field">
+					<span class="sr-only">Event category</span>
+					<select id="eventCategory">
+						<option value="general">General</option>
+						<option value="birthday">Birthday</option>
+						<option value="appointment">Appointment</option>
+						<option value="trip">Trip</option>
+					</select>
+				</label>
+				<label class="switch-row">
+					<span>Would you like to be reminded of this event?</span>
+					<input
+						id="eventAlert"
+						role="switch"
+						type="checkbox" />
+				</label>
+				<button
+					class="button turquoise"
+					type="submit">
+					Save Event
+				</button>
+			</form>
+		</main>
+		<script src="../scripts/core/core.js"></script>
+		<script src="../scripts/core/account-storage.js"></script>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/feedback.js"></script>
+		<script src="../scripts/pages/event-form-page.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

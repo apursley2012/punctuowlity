@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /events.html                                                          *
+ * Purpose: Hosts the event list, search, filters, and shared card rendering.  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/feedback.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/event-card.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/pages/events.css"
+			rel="stylesheet" />
+		<meta
+			content="Search, filter, add, edit, and delete upcoming events in the PunctuOwlity event-tracking browser demo."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="main">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-menu="account"
+			data-topbar=""></header>
+		<main
+			class="main-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<h1>Upcoming Events</h1>
+			<label class="search">
+				<input
+					aria-label="Search events"
+					id="eventSearch"
+					placeholder="Search events..."
+					type="search" />
+				<svg
+					class="search-icon"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false">
+					<circle
+						cx="10.8"
+						cy="10.8"
+						r="6.8"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.4" />
+					<path
+						d="m16 16 5 5"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.4"
+						stroke-linecap="round" />
+				</svg>
+			</label>
+			<section
+				class="date-banner"
+				aria-label="Event month navigation">
+				<button
+					type="button"
+					id="previousMonth"
+					aria-label="Previous month">
+					‹
+				</button>
+				<h2
+					id="displayMonth"
+					aria-live="polite"></h2>
+				<button
+					type="button"
+					id="nextMonth"
+					aria-label="Next month">
+					›
+				</button>
+			</section>
+			<div class="dotted"></div>
+			<nav
+				aria-label="Event categories"
+				class="tabs">
+				<button
+					aria-pressed="true"
+					class="active"
+					data-category="all"
+					type="button">
+					All Events
+				</button>
+				<button
+					aria-pressed="false"
+					data-category="birthday"
+					type="button">
+					Birthdays
+				</button>
+				<button
+					aria-pressed="false"
+					data-category="appointment"
+					type="button">
+					Appointments
+				</button>
+				<button
+					aria-pressed="false"
+					data-category="trip"
+					type="button">
+					Trips
+				</button>
+			</nav>
+			<div class="dotted"></div>
+			<section
+				aria-live="polite"
+				class="events-grid"
+				id="eventsGrid"></section>
+			<div class="dotted end-divider"></div>
+		</main>
+		<a
+			aria-label="Add event"
+			class="fab"
+			href="add-event.html">
+			＋
+		</a>
+		<script src="../scripts/core/core.js"></script>
+		<script src="../scripts/core/account-storage.js"></script>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/menu.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/feedback.js"></script>
+		<script src="../scripts/components/event-card.js"></script>
+		<script src="../scripts/pages/events-page.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

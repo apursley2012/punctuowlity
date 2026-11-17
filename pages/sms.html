@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /sms.html                                                             *
+ * Purpose: Collects the browser reminder preference; does not send text       *
+ *          messages.                                                          *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>Browser Reminders | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/buttons.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/forms.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/pages/sms.css"
+			rel="stylesheet" />
+		<meta
+			content="Choose whether PunctuOwlity may use reminder notifications in this local static browser demonstration."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="sms">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="sms-page"
+			id="main-content">
+			<h1 class="sr-only">Browser reminder notification preference</h1>
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<p class="permission">
+				Thanks for joining PunctuOwlity. Would you like to enable browser
+				reminder notifications for your events? These reminders can appear while
+				the events page is open and browser notifications are permitted.
+			</p>
+			<p class="permission">
+				Browser demo only: this preference controls local reminder
+				notifications. It does not send SMS text messages or request Android SMS
+				permissions.
+			</p>
+			<label
+				class="welcome-phone"
+				for="welcomePhone">
+				Phone number (optional)
+				<input
+					id="welcomePhone"
+					type="tel"
+					autocomplete="tel"
+					inputmode="tel"
+					maxlength="30"
+					placeholder="Add a phone number" />
+				<small>
+					Saved only in this browser. Browser reminders do not send text
+					messages.
+				</small>
+			</label>
+			<button
+				class="button turquoise sms-choice"
+				data-sms="allowed"
+				type="button">
+				Enable Browser Reminders
+			</button>
+			<button
+				class="button coral sms-choice"
+				data-sms="denied"
+				type="button">
+				No, thanks
+			</button>
+		</main>
+		<script src="../scripts/core/core.js"></script>
+		<script src="../scripts/core/account-storage.js"></script>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/pages/sms-page.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

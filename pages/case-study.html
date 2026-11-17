@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /case-study.html                                                      *
+ * Purpose: Presents the portfolio case study explaining implementation        *
+ *          decisions and trade-offs.                                          *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>PunctuOwlity Case Study | Alysha Pursley</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/content.css"
+			rel="stylesheet" />
+		<meta
+			content="Explore the Android and web architecture, data handling, visual design, accessibility decisions, and engineering trade-offs behind PunctuOwlity."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="content">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="content-page case-study-page editorial-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<p class="eyebrow">Case Study</p>
+			<h1>PunctuOwlity: From Android App to Responsive Web Companion</h1>
+			<p class="lead">
+				A closer look at the event tracker I designed and built, the engineering
+				choices behind it, and what the project demonstrates about my approach
+				to software development.
+			</p>
+			<section>
+				<h2>Project overview</h2>
+				<p>
+					PunctuOwlity is an event-tracking application I built in Java for
+					Android and then adapted into a responsive browser companion. It
+					brings event dates, times, categories, and reminder choices into a
+					single, recognizable interface. The two versions share the product
+					concept and visual language, but each uses the storage and interaction
+					tools appropriate to its platform.
+				</p>
+				<p>
+					My work spans the application structure, data model, account and event
+					flows, reminder handling, visual design, and the browser adaptation.
+					The project demonstrates how I translate a user-facing idea into
+					connected screens and maintainable behavior, rather than treating each
+					page as an isolated mockup.
+				</p>
+			</section>
+			<section>
+				<h2>The problem I wanted to solve</h2>
+				<p>
+					People need to know what is coming up without searching through
+					unrelated information. A useful event tracker should make the next
+					action obvious: review an event, narrow the list, correct its details,
+					or decide whether a reminder is needed.
+				</p>
+				<p>
+					I designed PunctuOwlity around that short sequence of decisions. The
+					event list gives dates and titles a strong visual hierarchy; search
+					and category tabs help locate an entry; and a dedicated add/edit
+					screen keeps the data-entry task focused. I kept the product
+					approachable instead of adding calendar complexity that its core use
+					case did not require.
+				</p>
+			</section>
+			<section>
+				<h2>Architecture: two implementations, one product</h2>
+				<p>
+					The native application is organized into Android activities for login,
+					signup, event browsing, event editing, account settings, and SMS
+					preferences. Java classes such as DatabaseHelper, Event,
+					ReminderScheduler, and SmsReminderReceiver handle persistence, event
+					data, scheduling, and alarm delivery responsibilities. Android XML
+					resources define layouts, text, and visual assets.
+				</p>
+				<p>
+					The browser companion is a static HTML, CSS, and JavaScript
+					application. Shared scripts provide event normalization,
+					browser-storage access, account helpers, and reusable interface
+					components. Page-specific scripts initialize the login, signup, event
+					list, event form, account, and preference screens. A small bootstrap
+					script chooses the appropriate page initializer using the page's
+					data-page attribute.
+				</p>
+				<p>
+					I chose separate platform implementations rather than presenting the
+					web version as a wrapper around the Android app. That makes the
+					boundaries clearer: Android can use SQLite and platform alarms; the
+					static browser can provide a self-contained demonstration without a
+					server. The trade-off is that records do not synchronize between
+					devices or between the two versions.
+				</p>
+			</section>
+			<section>
+				<h2>Data modeling and persistence</h2>
+				<p>
+					On Android, DatabaseHelper extends SQLiteOpenHelper and owns the user
+					and event tables. Event records include a title, date, time, category,
+					and reminder flag. Database schema version 4 includes additive
+					migrations for fields introduced after the original schema, preserving
+					existing local records rather than recreating tables on upgrade.
+				</p>
+				<p>
+					The browser stores each local account's event records in browser
+					storage; new accounts start without preloaded example events. A
+					normalization function accepts historical date and time
+					representations and returns a consistent shape for rendering. This
+					keeps display components from needing to understand every older
+					storage format.
+				</p>
+				<p>
+					An important limitation is intentional: the Android SQLite database
+					and browser localStorage are independent. Neither provides hosted
+					backup or cross-device synchronization. The web account flow is a
+					local demonstration, not a production identity service.
+				</p>
+			</section>
+			<section>
+				<h2>Event logic and state management</h2>
+				<p>
+					The event list reads saved events, applies the active category and
+					search query, and renders the matching cards. In the browser, the
+					selected category is held as page-level state; the search field
+					supplies the current query; and the list is rebuilt when either
+					changes. Empty results receive an explicit message rather than leaving
+					an unexplained blank area.
+				</p>
+				<p>
+					The add/edit screen uses one form for both operations. When an event
+					ID appears in the URL, the browser looks up that record and fills the
+					form; an unknown ID is rejected rather than silently creating a
+					different event. The save handler validates the title, calendar date,
+					and time, then updates or inserts the record. It also prevents a
+					second submission while the success redirect is pending.
+				</p>
+				<p>
+					State is deliberately modest. Persisted events and demo accounts live
+					in browser storage, authentication status is represented in
+					sessionStorage, and temporary search or form state remains on the
+					page. This avoids introducing a framework or global state library for
+					a small application while keeping the ownership of each value
+					understandable.
+				</p>
+			</section>
+			<section>
+				<h2>Account flow and security boundaries</h2>
+				<p>
+					The native app stores local account profiles in SQLite and uses a
+					password-hashing helper for newly saved credentials. Its sign-in flow
+					checks the supplied credentials before recording a local session
+					preference and continuing to the SMS-choice screen or event list.
+					Legacy password handling exists for previously stored local accounts.
+				</p>
+				<p>
+					The browser companion similarly supports a demonstrative signup and
+					login journey, with password hashing and verification implemented in
+					client-side JavaScript. Because the accounts and session indicators
+					remain under the user's browser control, this must not be described as
+					secure server authentication. A production version would need a
+					backend, server-managed sessions, account recovery, and appropriate
+					abuse protection.
+				</p>
+				<p>
+					Being explicit about these boundaries is part of the engineering work:
+					a polished interface should not imply stronger security or
+					infrastructure than the implementation actually provides.
+				</p>
+			</section>
+			<section>
+				<h2>Reminders: platform capability versus interface behavior</h2>
+				<p>
+					On Android, a reminder-enabled event is converted from its stored date
+					and time into a scheduled alarm. ReminderScheduler uses AlarmManager
+					and an event-specific PendingIntent; SmsReminderReceiver checks the
+					saved SMS preference, permission, and phone number before attempting
+					delivery. Editing or deleting an event also requires the corresponding
+					scheduled reminder to be updated or canceled.
+				</p>
+				<p>
+					The browser companion does not send SMS. When the page is open and
+					browser notification permission has been granted, its event-list
+					script can show a notification for reminder-enabled events whose date
+					matches the current local calendar day. A sessionStorage marker helps
+					avoid repeating the same notification during that browser session.
+					This is not a background scheduler, and it does not guarantee a
+					notification at the event's exact time.
+				</p>
+				<p>
+					The distinction matters because permission, scheduling, and successful
+					delivery are different states. The design should help people make an
+					informed choice without claiming that a static website can provide
+					Android-style SMS reminders.
+				</p>
+			</section>
+			<section>
+				<h2>Visual design and responsive adaptation</h2>
+				<p>
+					I built a recognizable visual identity around a soft blue background,
+					coral action controls, teal date accents, navy text, decorative
+					typography, and a custom owl-and-calendar logo. The event cards
+					emphasize the date first, then the event title and time, so the
+					information most useful for scanning remains prominent.
+				</p>
+				<p>
+					The Android layout uses native XML views and resources. The browser
+					version translates the same hierarchy into semantic HTML and CSS, with
+					shared design styles, page-level stylesheets, and responsive media
+					queries. I preserved the relationships between controls and
+					information instead of copying fixed Android coordinates into the
+					browser.
+				</p>
+				<p>
+					This approach keeps the design recognizable at different viewport
+					sizes while allowing cards, forms, and navigation to wrap and resize.
+					It also reduces duplicated styling by giving repeated elements shared
+					component rules.
+				</p>
+			</section>
+			<section>
+				<h2>Accessibility decisions and limitations</h2>
+				<p>
+					The browser pages use semantic headings, form labels, a skip link to
+					main content, descriptive button labels, and interface feedback for
+					invalid entries and empty event results. These choices support clearer
+					navigation for keyboard and assistive-technology users and improve
+					usability for everyone.
+				</p>
+				<p>
+					Accessibility is not something I can establish from markup alone.
+					Screen-reader announcements, focus order, keyboard-only operation,
+					contrast, zoom behavior, and touch-target sizing still require
+					interaction and device-level evaluation. I distinguish the
+					accessibility measures implemented in source from testing that has not
+					been demonstrated.
+				</p>
+			</section>
+			<section>
+				<h2>Testing and review approach</h2>
+				<p>
+					During development, the browser code was checked with automated
+					JavaScript regression tests, syntax checks, local-reference
+					validation, and CSS parsing. Android XML resources and project
+					structure were also statically checked. Those checks helped catch
+					issues such as broken references, inconsistent date handling, and
+					missing Android activity registration.
+				</p>
+				<p>
+					Automated source checks are useful but limited. They do not establish
+					that every Android screen works on a device, that SMS messages are
+					delivered by a carrier, or that every responsive layout and
+					accessibility interaction behaves correctly. The project should be
+					assessed with those limits in mind rather than treating a passing
+					static check as proof of full runtime readiness.
+				</p>
+			</section>
+			<section>
+				<h2>Trade-offs and lessons</h2>
+				<p>
+					Keeping the browser companion static makes the project easy to open
+					and demonstrate, but it means storage is device-local and
+					authentication is not production-grade. Using native Android alarms
+					enables a platform-specific reminder path, but introduces permissions,
+					scheduling lifecycle concerns, and device-dependent behavior.
+					Retaining the original visual identity creates continuity, but
+					requires responsive rules instead of a rigid recreation.
+				</p>
+				<p>
+					These decisions reinforced a principle I apply to software projects:
+					separate the experience a user needs from the technical mechanism used
+					to deliver it. Good architecture makes those mechanisms visible and
+					changeable without forcing the interface to become inconsistent.
+				</p>
+			</section>
+			<section>
+				<h2>What this work demonstrates</h2>
+				<p>
+					PunctuOwlity brings together interface design, Java and SQLite
+					development, browser programming, input validation, data
+					normalization, reusable components, and responsive styling. It shows
+					my ability to work across the full path from a user-facing problem to
+					data and behavior behind the screen.
+				</p>
+				<p>
+					For someone evaluating my work, the project is evidence of practical
+					implementation and technical judgment: I can preserve a product's
+					identity across platforms, explain why the implementations differ, and
+					identify the difference between a feature that is present in source
+					code and one that has been verified in a real environment.
+				</p>
+			</section>
+			<nav
+				class="content-nav"
+				data-content-nav="events,relatedArticles"></nav>
+		</main>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/content-nav.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

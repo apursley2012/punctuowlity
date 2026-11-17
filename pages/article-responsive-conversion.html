@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /article-responsive-conversion.html                                   *
+ * Purpose: Explains the responsive browser companion and its relationship to  *
+ *          native Android.                                                    *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>Responsive Conversion and Product Identity | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/content.css"
+			rel="stylesheet" />
+		<meta
+			content="How PunctuOwlity preserves a recognizable experience across Android and the browser while respecting different platform architectures."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="content">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="content-page article-page editorial-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<p class="eyebrow">Responsive Design</p>
+			<h1>Responsive Conversion Without Losing Product Identity</h1>
+			<p class="article-meta">Alysha Pursley</p>
+			<p class="lead">
+				What I learned adapting PunctuOwlity from native Android layouts to a
+				flexible browser interface while keeping its design and workflow
+				recognizable.
+			</p>
+			<section>
+				<h2>Conversion begins with understanding the original</h2>
+				<p>
+					When I adapted PunctuOwlity from Android to the browser, the goal was
+					not to produce a generic desktop dashboard. The Android interface
+					already had a visual identity and a clear hierarchy: dates were
+					prominent, event details were grouped, and the main actions were easy
+					to locate.
+				</p>
+				<p>
+					The first design task was identifying which relationships defined the
+					experience. Colors, typography, the owl logo, and the arrangement of
+					event information contributed to recognition. Exact pixel positions
+					did not.
+				</p>
+			</section>
+			<section>
+				<h2>Native layouts and browser layouts solve different problems</h2>
+				<p>
+					Android XML views and browser CSS operate with different layout
+					models, default behaviors, and input expectations. A native control
+					cannot always be translated into a web control by matching its
+					dimensions. Keyboard focus, form validation, screen zoom, and viewport
+					changes all influence the result.
+				</p>
+				<p>
+					For the web companion, I used semantic HTML, shared CSS components,
+					and page-specific styles rather than attempting to reproduce Android
+					layout constraints literally. This made it possible to retain the same
+					visual priorities while allowing the browser to manage flexible
+					content.
+				</p>
+			</section>
+			<section>
+				<h2>Use a visual system rather than one-off corrections</h2>
+				<p>
+					PunctuOwlity's browser styles are divided between shared foundations,
+					reusable component rules, and page-level styles. The same colors,
+					spacing ideas, and typography choices recur across login, signup,
+					event cards, forms, and content pages.
+				</p>
+				<p>
+					This structure matters because visual consistency is a maintenance
+					problem as well as a design problem. If every screen implements the
+					same button or heading independently, even small changes can create
+					drift. Shared rules make the intended relationships easier to
+					preserve.
+				</p>
+			</section>
+			<section>
+				<h2>Responsive behavior is a content problem</h2>
+				<p>
+					An event card may contain a short label or a long personal title. A
+					form may show an error message that was not visible in the original
+					mockup. A navigation control may need more room at increased text
+					size.
+				</p>
+				<p>
+					Flexible sizing, wrapping, and responsive media queries help
+					accommodate those differences. The important question is not whether a
+					page matches a single screenshot; it is whether the hierarchy remains
+					readable when the content and available space change.
+				</p>
+			</section>
+			<section>
+				<h2>Preserve the workflow across platforms</h2>
+				<p>
+					The browser companion follows the same broad journey as the Android
+					app: sign in, choose notification preferences, browse events, filter
+					or search, and add or edit an entry. This continuity is more valuable
+					than forcing both implementations to use identical navigation
+					mechanics.
+				</p>
+				<p>
+					At the code level, the browser's page-specific scripts manage
+					interactions while shared helpers handle event normalization and
+					persistence. Reusable card and navigation components reduce
+					repetition. This is an architectural translation of the experience,
+					not merely a visual imitation.
+				</p>
+			</section>
+			<section>
+				<h2>Keep data differences visible</h2>
+				<p>
+					Android persists events in SQLite; the browser companion uses
+					localStorage. These choices fit their environments, but they are not
+					equivalent to a synchronized backend. The browser also uses
+					sessionStorage for its demo login state.
+				</p>
+				<p>
+					A conversion can look complete while quietly implying that data
+					follows the user everywhere. PunctuOwlity does not implement that
+					synchronization, and describing the distinction accurately is part of
+					a responsible project presentation.
+				</p>
+			</section>
+			<section>
+				<h2>Accessibility belongs in the conversion</h2>
+				<p>
+					Moving from native widgets to HTML changes how assistive technology
+					encounters a page. Semantic headings, associated form labels,
+					descriptive controls, and skip navigation provide a starting point for
+					accessible browser interaction.
+				</p>
+				<p>
+					These source-level decisions do not prove the entire experience is
+					accessible. Keyboard testing, focus visibility, screen-reader
+					behavior, contrast, and zoom still need to be evaluated in the running
+					interface. Responsive and accessible are related goals, but neither
+					automatically guarantees the other.
+				</p>
+			</section>
+			<section>
+				<h2>Test behavior, not only screenshots</h2>
+				<p>
+					A page that appears correct can still contain broken links, invalid
+					form behavior, inconsistent state, or controls that fail after an
+					edit. I used automated browser tests, syntax checks, and
+					local-reference validation during development to catch some of these
+					problems.
+				</p>
+				<p>
+					Those checks complement, rather than replace, real-browser and device
+					testing. The distinction is especially important when the browser
+					companion and Android application have different capabilities, such as
+					local notifications versus SMS alarms.
+				</p>
+			</section>
+			<section>
+				<h2>What I learned from the conversion</h2>
+				<p>
+					The strongest result came from preserving the product's intent while
+					allowing the implementation to change. PunctuOwlity can feel like the
+					same application on Android and in a browser without pretending that
+					the underlying storage, permissions, and rendering systems are
+					identical.
+				</p>
+				<p>
+					That approach scales beyond this project: identify the essential user
+					journey, define reusable design decisions, then implement and verify
+					them in ways that make sense for the target platform.
+				</p>
+			</section>
+			<nav
+				class="content-nav"
+				data-content-nav="articles,caseStudy"></nav>
+		</main>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/content-nav.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /article-product-vision.html                                          *
+ * Purpose: Explains reminder design, consent, scheduling, and platform        *
+ *          limitations.                                                       *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>A Simpler Way to Keep Track of What Matters | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/content.css"
+			rel="stylesheet" />
+		<meta
+			content="My original product proposal and design decisions for PunctuOwlity."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="content">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="content-page article-page editorial-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<p class="eyebrow">Product vision</p>
+			<h1>A Simpler Way to Keep Track of What Matters</h1>
+			<p class="article-meta">Alysha Pursley</p>
+			<p class="lead">
+				The goals, users, screen plan, and technical direction I established for
+				PunctuOwlity before implementation.
+			</p>
+			<section>
+				<h2>A lightweight tracker, not a full calendar</h2>
+				<p>
+					The goal I set for PunctuOwlity was to give people a quick and easy
+					way to track upcoming events. I wanted them to create and manage
+					personal reminders without unnecessary complexity: open the app, see
+					what is coming up, and add or remove an event in seconds rather than
+					minutes.
+				</p>
+				<p>
+					The product was deliberately smaller in scope than a comprehensive
+					calendar. Its central jobs were account access, viewing events, and
+					editing the details that make a reminder useful.
+				</p>
+			</section>
+			<section>
+				<h2>One core user need, several everyday contexts</h2>
+				<p>
+					I did not design separate roles for different kinds of users. Instead,
+					I considered students and professionals tracking meetings, deadlines,
+					or classes; parents and caregivers remembering appointments and school
+					activities; and people who simply wanted daily reminders.
+				</p>
+				<p>
+					What connects those use cases is the need for speed, clear
+					information, and minimal setup. That requirement shaped both the
+					screen count and the way the event list presents information.
+				</p>
+			</section>
+			<section>
+				<h2>The screen plan</h2>
+				<p>
+					My original plan identified three essential destinations: login and
+					account creation, a main view of upcoming events, and an add/edit
+					screen. The main view needed to show each event’s title, date, and
+					time, with a floating action button to create a new entry.
+				</p>
+				<p>
+					The event editor needed a title, date picker, time picker, and room
+					for a short description. Saving or deleting would return the person to
+					the main list. I wanted familiar Android interaction patterns, easily
+					tappable buttons, high contrast, and predictable navigation.
+				</p>
+			</section>
+			<section>
+				<h2>The original data and architecture proposal</h2>
+				<p>
+					I initially proposed a local Room database with users and events
+					tables, an MVVM structure, LiveData-driven updates, and Android
+					background scheduling using AlarmManager or WorkManager. The intent
+					was to separate storage, screen state, and reminder delivery so the
+					interface could stay responsive.
+				</p>
+				<p>
+					That was the architecture proposal, not a claim that every library was
+					used in the finished application. The Android code in this repository
+					instead uses SQLiteOpenHelper for persistence, alongside separate
+					event and reminder classes. The difference between a plan and an
+					implementation is an important part of documenting the work
+					accurately.
+				</p>
+			</section>
+			<nav
+				class="content-nav"
+				data-content-nav="articles,caseStudy"></nav>
+		</main>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/content-nav.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

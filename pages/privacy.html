@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /privacy.html                                                         *
+ * Purpose: Defines the privacy page and its accessible document structure.    *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			name="author"
+			content="Alysha Pursley" />
+		<meta
+			name="theme-color"
+			content="#2F3653" />
+		<title>Privacy &amp; Data Handling | PunctuOwlity</title>
+		<link
+			rel="stylesheet"
+			href="../styles/shared.css" />
+		<link
+			rel="stylesheet"
+			href="../styles/pages/legal.css" />
+	</head>
+	<body>
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header class="topbar">
+			<a
+				class="icon-button back legal-back"
+				href="../pages/index.html"
+				aria-label="Back to PunctuOwlity">
+				←
+			</a>
+		</header>
+		<main
+			id="main-content"
+			class="legal-page">
+			<h1>Privacy &amp; Data Handling</h1>
+			<p>
+				My PunctuOwlity project includes an Android application and a separate
+				static browser demonstration. They have different capabilities and
+				storage mechanisms.
+			</p>
+			<h2>Browser demonstration</h2>
+			<p>
+				The browser demo stores account details, password-verification material,
+				event details, and preferences in browser storage on the device. Browser
+				accounts are not server-verified and browser storage is not a secure
+				vault. Do not enter real passwords or sensitive personal information.
+				Clearing site data may remove records; anyone with access to the browser
+				profile or developer tools may be able to inspect or alter stored data.
+			</p>
+			<h2>Android application</h2>
+			<p>
+				The Android app stores account and event information in its app-local
+				SQLite database. It can request SMS permission and, when the user
+				enables reminders, send SMS messages using the device. Standard SMS and
+				mobile-carrier handling may apply. The Android app also uses local
+				notifications and scheduled alarms. Permission and settings can be
+				changed in Android settings and within the app where available.
+			</p>
+			<h2>Third-party resources</h2>
+			<p>
+				Browser pages request fonts from Google Fonts, subject to network
+				availability and the font provider’s own data-handling practices. The
+				static demo does not require a project-operated backend to store browser
+				accounts.
+			</p>
+			<h2>Managing information</h2>
+			<p>
+				Browser records can be removed through the application where supported
+				or by clearing the site’s browser storage. Removing the Android app
+				normally removes app-local data, subject to device and backup behavior.
+				Do not assume deletion can reverse an SMS already sent.
+			</p>
+			<h2>Scope of this notice</h2>
+			<p>
+				This notice describes behavior visible in the supplied source project;
+				it does not claim that a public service is operating, that no third
+				party ever receives network metadata, or that data is encrypted beyond
+				the platform’s protections.
+			</p>
+			<p>
+				<a
+					class="button-link"
+					href="../pages/index.html">
+					Return to PunctuOwlity
+				</a>
+			</p>
+		</main>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

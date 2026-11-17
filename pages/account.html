@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /account.html                                                         *
+ * Purpose: Presents browser account settings and profile editing.             *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>My Account / Settings | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/buttons.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/forms.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/feedback.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/pages/account.css"
+			rel="stylesheet" />
+		<meta
+			content="Update the name, email address, phone number, and username stored in your local PunctuOwlity demo account."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="account">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="auth-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<h1>My Account / Settings</h1>
+			<form
+				class="form-card"
+				id="accountForm">
+				<label
+					class="sr-only"
+					for="accountFirstName">
+					First Name
+				</label>
+				<div class="field">
+					<input
+						autocomplete="given-name"
+						id="accountFirstName"
+						maxlength="80"
+						placeholder="First Name"
+						required=""
+						type="text" />
+				</div>
+				<label
+					class="sr-only"
+					for="accountLastName">
+					Last Name
+				</label>
+				<div class="field">
+					<input
+						autocomplete="family-name"
+						id="accountLastName"
+						maxlength="80"
+						placeholder="Last Name"
+						required=""
+						type="text" />
+				</div>
+				<label
+					class="sr-only"
+					for="accountEmail">
+					Email Address
+				</label>
+				<div class="field">
+					<input
+						autocomplete="email"
+						id="accountEmail"
+						inputmode="email"
+						maxlength="254"
+						placeholder="Email Address"
+						required=""
+						type="email" />
+				</div>
+				<label
+					class="sr-only"
+					for="accountPhone">
+					Phone Number
+				</label>
+				<div class="field">
+					<input
+						autocomplete="tel"
+						id="accountPhone"
+						inputmode="tel"
+						maxlength="30"
+						placeholder="Phone Number (optional)"
+						type="tel" />
+				</div>
+				<label
+					class="sr-only"
+					for="accountUsername">
+					Username
+				</label>
+				<div class="field">
+					<input
+						autocomplete="username"
+						id="accountUsername"
+						maxlength="80"
+						placeholder="Username"
+						required=""
+						type="text" />
+				</div>
+				<button
+					class="button turquoise"
+					type="submit">
+					Save Changes
+				</button>
+			</form>
+		</main>
+		<script src="../scripts/core/core.js"></script>
+		<script src="../scripts/core/account-storage.js"></script>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/feedback.js"></script>
+		<script src="../scripts/pages/account-page.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /article-useful-reminders.html                                        *
+ * Purpose: Explains reminder design, consent, scheduling, and platform        *
+ *          limitations.                                                       *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>Designing Reminders People Can Trust | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/content.css"
+			rel="stylesheet" />
+		<meta
+			content="A detailed look at reminder data, permissions, scheduling, feedback, and platform limits in the PunctuOwlity project."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="content">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="content-page article-page editorial-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<p class="eyebrow">Event Tracking</p>
+			<h1>Designing Reminders People Can Trust</h1>
+			<p class="article-meta">Alysha Pursley</p>
+			<p class="lead">
+				How PunctuOwlity connects event data, permissions, scheduling, and clear
+				feedback—and why an alert is only useful when its behavior matches the
+				promise.
+			</p>
+			<section>
+				<h2>A reminder is a decision-support tool</h2>
+				<p>
+					The purpose of a reminder is not to generate another alert. It is to
+					help someone recognize an upcoming commitment and decide what to do
+					next. That makes the information carried by the reminder as important
+					as the act of sending it.
+				</p>
+				<p>
+					In PunctuOwlity, an event has a title, date, time, category, and
+					reminder setting. The title and timing provide context; the setting
+					records the user's intention. A reminder without reliable event
+					details would undermine the very task the application is designed to
+					support.
+				</p>
+			</section>
+			<section>
+				<h2>Design the event data before the notification</h2>
+				<p>
+					Notification quality begins at the form. An incomplete or invalid date
+					cannot produce a dependable scheduled action, and a confusing event
+					title leaves the recipient guessing. This is why event validation
+					belongs in the save workflow rather than being deferred until an alarm
+					fires.
+				</p>
+				<p>
+					The browser form checks that a title, date, and time are present,
+					rejects impossible calendar dates, and stores a normalized event
+					representation. The Android form validates the event's date and time
+					before saving and checks that reminder-enabled events are scheduled in
+					the future. These checks support a more predictable experience, even
+					though they do not guarantee delivery.
+				</p>
+			</section>
+			<section>
+				<h2>Treat consent and configuration separately</h2>
+				<p>
+					Someone can permit an application to send SMS and still prefer not to
+					receive a reminder for every event. System permission and per-event
+					intent answer different questions: 'May the application use this
+					capability?' and 'Should this particular event use it?'
+				</p>
+				<p>
+					The Android implementation checks the saved SMS preference and
+					SEND_SMS permission before attempting a message. It also needs a
+					usable phone number. The application therefore does not treat the
+					existence of a scheduled alarm as automatic permission to send.
+				</p>
+				<p>
+					That separation is a useful design principle for any notification
+					system. A good default is understandable, but an explicit choice
+					should remain easy to change.
+				</p>
+			</section>
+			<section>
+				<h2>Remember that events change</h2>
+				<p>
+					Scheduling is not a one-time action. A meeting can move, a birthday
+					entry can be corrected, and an appointment can be canceled. If the
+					reminder remains tied to the original details, the system can become
+					actively misleading.
+				</p>
+				<p>
+					Android's ReminderScheduler associates alarms with event identifiers
+					through PendingIntent requests. When event details change, the
+					scheduled work must reflect the saved record; when an event is
+					deleted, its pending reminder must be canceled. Keeping the database
+					operation and reminder lifecycle coordinated is a small but important
+					example of application correctness.
+				</p>
+			</section>
+			<section>
+				<h2>Be precise about delivery guarantees</h2>
+				<p>
+					There is a difference between an event marked for reminders, an alarm
+					scheduled by the operating system, an SMS send attempt, and a message
+					received by the user. Those states are often collapsed into one vague
+					'reminders enabled' label, but they represent different outcomes.
+				</p>
+				<p>
+					PunctuOwlity's native code contains an Android alarm-and-SMS path. Its
+					web companion does not. The browser can display a notification when
+					the events page is active, permission has been granted, and a
+					reminder-enabled event matches today's local date. It cannot provide a
+					dependable background SMS service or promise an alert at the exact
+					event time.
+				</p>
+				<p>
+					Making these distinctions explicit is more credible than describing
+					every notification-related UI element as a fully delivered service.
+				</p>
+			</section>
+			<section>
+				<h2>Respect attention, not just permissions</h2>
+				<p>
+					A reminder that arrives too often or says too little becomes noise.
+					Repetition can be especially frustrating when a person has already
+					seen the event and made a decision about it.
+				</p>
+				<p>
+					The browser implementation uses a session-level marker to avoid
+					showing the same event's daily notification repeatedly within that
+					session. That is a modest safeguard, not a substitute for a production
+					notification policy. A larger system would need explicit timing
+					preferences, delivery status, and a strategy for duplicate suppression
+					across devices.
+				</p>
+			</section>
+			<section>
+				<h2>Design feedback for failure as well as success</h2>
+				<p>
+					An event can save successfully while reminder scheduling fails. Those
+					outcomes should not be presented as identical. Users benefit from
+					clear feedback about what has been stored and what still needs
+					attention.
+				</p>
+				<p>
+					The Android event flow includes a scheduling-failure message, and the
+					browser form reports storage-write failures instead of silently
+					redirecting. Both examples reinforce the same lesson: interfaces
+					should describe the result that actually occurred, not the result the
+					developer hoped would occur.
+				</p>
+			</section>
+			<section>
+				<h2>The broader lesson</h2>
+				<p>
+					Reliable reminders combine trustworthy data, user choice, correct
+					scheduling, honest status communication, and restraint. None of those
+					qualities can be achieved by adding a notification button alone.
+				</p>
+				<p>
+					Working through these concerns in PunctuOwlity helped me treat
+					reminders as a cross-cutting application workflow—one that connects
+					validation, persistence, platform permissions, event updates, and user
+					trust.
+				</p>
+			</section>
+			<nav
+				class="content-nav"
+				data-content-nav="articles,events"></nav>
+		</main>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/content-nav.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--                                                                            
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /signup.html                                                          *
+ * Purpose: Presents browser-demo account registration and local-storage       *
+ *          disclosure.                                                        *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; img-src &#x27;self&#x27; data:; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<meta
+			content="width=device-width,initial-scale=1"
+			name="viewport" />
+		<title>Create an Account | PunctuOwlity</title>
+		<link
+			href="../styles/shared.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/buttons.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/forms.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/components/feedback.css"
+			rel="stylesheet" />
+		<link
+			href="../styles/pages/signup.css"
+			rel="stylesheet" />
+		<meta
+			content="Create a local PunctuOwlity demo account to manage event details, categories, and reminder preferences."
+			name="description" />
+		<meta
+			content="#2F3653"
+			name="theme-color" />
+	</head>
+	<body data-page="signup">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header
+			class="topbar"
+			data-topbar=""></header>
+		<main
+			class="auth-page signup-page"
+			id="main-content">
+			<div class="logo">
+				<img
+					alt="PunctuOwlity Event Tracking"
+					height="169"
+					src="../assets/punctuowlity-logo.png"
+					width="260" />
+			</div>
+			<h1>Create an Account</h1>
+			<p class="demo-security-note">
+				Accounts are saved only in this browser, not on a server. Please do not
+				use a real password.
+			</p>
+			<form
+				class="form-card"
+				id="signupForm">
+				<div class="field">
+					<label
+						class="sr-only"
+						for="firstName">
+						First Name
+					</label>
+					<input
+						autocomplete="given-name"
+						id="firstName"
+						maxlength="80"
+						placeholder="First Name"
+						required="" />
+				</div>
+				<div class="field">
+					<label
+						class="sr-only"
+						for="lastName">
+						Last Name
+					</label>
+					<input
+						autocomplete="family-name"
+						id="lastName"
+						maxlength="80"
+						placeholder="Last Name"
+						required="" />
+				</div>
+				<div class="field">
+					<label
+						class="sr-only"
+						for="editEmail">
+						Email Address
+					</label>
+					<input
+						autocomplete="email"
+						id="editEmail"
+						inputmode="email"
+						maxlength="254"
+						placeholder="Email Address"
+						required=""
+						type="email" />
+				</div>
+				<div class="field">
+					<label
+						class="sr-only"
+						for="phone">
+						Phone Number
+					</label>
+					<input
+						autocomplete="tel"
+						id="phone"
+						inputmode="tel"
+						maxlength="30"
+						placeholder="Phone (optional; stored only in this browser)"
+						type="tel" />
+				</div>
+				<div class="field">
+					<label
+						class="sr-only"
+						for="signupUsername">
+						Username
+					</label>
+					<input
+						autocomplete="username"
+						id="signupUsername"
+						maxlength="80"
+						placeholder="Username"
+						required="" />
+				</div>
+				<div class="field password-field">
+					<label
+						class="sr-only"
+						for="signupPassword">
+						Password
+					</label>
+					<input
+						autocomplete="new-password"
+						id="signupPassword"
+						maxlength="128"
+						placeholder="Password"
+						required=""
+						type="password" />
+					<button
+						aria-label="Show password"
+						class="toggle-password"
+						type="button"></button>
+				</div>
+				<div class="field password-field">
+					<label
+						class="sr-only"
+						for="confirmPassword">
+						Confirm Password
+					</label>
+					<input
+						autocomplete="new-password"
+						id="confirmPassword"
+						maxlength="128"
+						placeholder="Confirm Password"
+						required=""
+						type="password" />
+					<button
+						aria-label="Show password"
+						class="toggle-password"
+						type="button"></button>
+				</div>
+				<p class="account-prompt">
+					Browser-only demonstration: account details are stored on this device,
+					not verified by a server. Browser reminders are not SMS messages. Do
+					not use a real password or sensitive personal information.
+				</p>
+				<button
+					class="button turquoise"
+					type="submit">
+					Sign Up
+				</button>
+				<p class="account-prompt">
+					Already have an account?
+					<br />
+					<a href="index.html">Login</a>
+				</p>
+				<p
+					class="error"
+					id="signupError"
+					role="alert"></p>
+			</form>
+		</main>
+		<script src="../scripts/core/core.js"></script>
+		<script src="../scripts/core/password-security.js"></script>
+		<script src="../scripts/core/account-storage.js"></script>
+		<script src="../scripts/components/icons.js"></script>
+		<script src="../scripts/components/topbar.js"></script>
+		<script src="../scripts/components/feedback.js"></script>
+		<script src="../scripts/components/password-toggle.js"></script>
+		<script src="../scripts/pages/signup-page.js"></script>
+		<script src="../scripts/core/bootstrap.js"></script>
+		<footer
+			class="site-footer"
+			aria-label="Project information">
+			<a href="privacy.html">Privacy</a>
+			<a href="terms.html">Terms &amp; Demo</a>
+			<a href="licenses.html">Licenses &amp; Attribution</a>
+		</footer>
+	</body>
+</html>
