@@ -1,0 +1,14 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /account.css                                                          *
+ * Purpose: Styles the account settings form and its responsive layout.        *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+.auth-page {
+  padding-bottom: 48px;
+}

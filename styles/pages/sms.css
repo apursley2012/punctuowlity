@@ -1,0 +1,84 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /sms.css                                                              *
+ * Purpose: Styles the browser reminder-preference screen.                     *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+.sms-page {
+  width: min(100% - 32px, 600px);
+  margin: 0 auto;
+  padding: clamp(18px, 4vh, 40px) 0 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(16px, 2.5vh, 26px);
+}
+
+.sms-page .logo {
+  width: clamp(170px, 22vw, 250px);
+  height: auto;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.sms-page .logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.permission {
+  width: min(100%, 520px);
+  margin: 0;
+  font-family: 'Cormorant Upright', serif;
+  font-size: clamp(21px, 2.4vw, 27px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.welcome-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(100%, 380px);
+  text-align: left;
+  font: 600 18px/1.35 Arial, sans-serif;
+}
+.welcome-phone input {
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 2px solid var(--field-border);
+  border-radius: 28px;
+  background: #fff;
+  font: 18px Arial, sans-serif;
+}
+.welcome-phone small { font-size: 13px; font-weight: 400; }
+.sms-page .button {
+  width: min(100%, 380px);
+  margin: 0;
+  display: flex;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+
+.sms-page {
+  padding-top: 24px;
+  gap: 18px;
+}
+
+.permission {
+  font-size: clamp(21px, 5vw, 27px);
+}
+
+.sms-page .logo {
+  width: 170px;
+}
+}

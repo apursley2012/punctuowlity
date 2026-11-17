@@ -1,0 +1,173 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /events.css                                                           *
+ * Purpose: Styles the event list, category filters, and responsive grid.      *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+/* Reference: original mobile screen. Two cards per row at every width. */
+.main-page {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 16px 0 44px;
+  text-align: center;
+}
+.main-page .logo {
+  width: clamp(140px, 25vw, 200px);
+  height: clamp(118px, 22vw, 175px);
+  margin: 0 auto 8px;
+}
+.main-page h1 {
+  margin: 0 12px 18px;
+  font: 600 clamp(30px, 4vw, 42px)/1.15 "Cormorant Upright", serif;
+}
+.search {
+  width: min(calc(100% - 28px), 620px);
+  height: 52px;
+  margin: 0 auto 24px;
+  padding: 0 10px 0 0;
+  border: 2px solid var(--field-border);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  background: white;
+  box-shadow: 0 1px 3px #0002;
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 10px 14px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: 16px Arial, sans-serif;
+}
+.search .search-icon {
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  color: var(--navy);
+  pointer-events: none;
+}
+.search:focus-within {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+.date-banner {
+  width: 100%;
+  min-height: 86px;
+  padding: 12px 14px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px;
+  background: var(--turquoise);
+}
+.date-banner h2 {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+  font: 600 clamp(26px, 4vw, 36px)/1.1 "Cormorant Upright", serif;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.date-banner button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--navy);
+  border-radius: 12px;
+  background: white;
+  color: var(--navy);
+  font: 700 28px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+.dotted {
+  width: 100%;
+  height: 11px;
+  margin: 0 auto;
+  background-color: var(--page);
+  background-image: radial-gradient(circle, var(--navy) 2px, transparent 2.5px);
+  background-size: 9px 9px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.tabs {
+  width: 100%;
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 0 4px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  background: white;
+}
+.tabs button {
+  min-width: 0;
+  padding: 8px 2px;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font: 700 clamp(10px, 1.8vw, 17px)/1.2 "Aref Ruqaa", serif;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.tabs button.active {
+  color: #00898c;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.tabs button:focus-visible,
+.date-banner button:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+.events-grid {
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(7px, 1.5vw, 14px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(7px, 1.5vw, 14px);
+  background: var(--events-background);
+}
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 16px 0;
+  color: white;
+  font-size: 20px;
+}
+.empty-add-link { color: white; font-weight: bold; }
+.fab {
+  position: fixed;
+  right: clamp(12px, 3vw, 28px);
+  bottom: clamp(16px, 4vw, 32px);
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--coral);
+  color: var(--navy);
+  text-decoration: none;
+  font: 36px/1 Arial, sans-serif;
+  box-shadow: 0 4px 10px #0004;
+}
+.fab svg { width: 42%; height: 42%; }
+@media (max-width: 620px) {
+  .main-page { padding-top: 12px; }
+  .main-page .logo { width: 158px; height: 142px; }
+  .main-page h1 { margin-bottom: 16px; font-size: 31px; }
+  .search { height: 44px; margin-bottom: 22px; }
+  .search input { font-size: 14px; }
+  .date-banner { min-height: 76px; }
+  .tabs { min-height: 42px; }
+  .fab { width: 52px; height: 52px; }
+}
