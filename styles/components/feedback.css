@@ -1,0 +1,49 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /feedback.css                                                         *
+ * Purpose: Styles toast and validation feedback shared across browser forms.  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 1000;
+  max-width: calc(100% - 32px);
+  padding: 12px 20px;
+  transform: translate(-50%, 25px);
+  opacity: 0;
+  border-radius: 5px;
+  background: var(--toast-background);
+  color: #FFFFFF;
+  font: 16px/1.35 Arial, sans-serif;
+  box-shadow: 0 5px 18px #0000004C;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.toast {
+  transition: none;
+}
+}
+
+/*
+ * Keeps field-specific validation feedback readable without relying on color.
+ */
+
+.field-error {
+  margin: 6px 0 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}

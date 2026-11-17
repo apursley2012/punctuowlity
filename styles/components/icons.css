@@ -1,0 +1,33 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /icons.css                                                            *
+ * Purpose: Sets sizing and alignment for reusable SVG icons.                  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+.icon-button svg,
+.search svg,
+.card-actions svg,
+.fab svg,
+.alarm svg {
+  display: block;
+  fill: currentColor;
+}
+
+.icon-button svg {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+
+.alarm.on {
+  color: var(--success);
+}
+
+.alarm.off {
+  color: var(--danger);
+}

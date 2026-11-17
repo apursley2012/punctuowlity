@@ -1,0 +1,37 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /logo.css                                                             *
+ * Purpose: Defines sizing and placement of the shared owl logo.               *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+.logo {
+  width: 240px;
+  height: 210px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+
+.logo,
+  .auth-page .logo,
+  .sms-page .logo {
+  width: 160px;
+  height: 160px;
+}
+}

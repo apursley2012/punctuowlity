@@ -1,0 +1,97 @@
+/*                                                                              
+ *******************************************************************************
+ * PunctuOwlity —                                                              *
+ * File: /event-card.css                                                       *
+ * Purpose: Styles reusable event cards and their actions.                     *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE.txt                                       *
+ *******************************************************************************
+ */                                                                             
+
+/* The card proportions and information hierarchy follow the original mobile reference.
+   On desktop, the white card itself is inset by 2px on each side; the navy
+   events area keeps its existing dimensions. */
+.event-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1.23 / 1;
+  container-type: inline-size;
+  padding: clamp(6px, 3.1cqw, 19px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-areas: "top actions" "date date" "title title" "time time";
+  column-gap: clamp(3px, 1cqw, 8px);
+  row-gap: clamp(3px, 1cqw, 7px);
+  overflow: hidden;
+  border-radius: 5px;
+  background: white;
+  color: #45424a;
+  text-align: left;
+  box-shadow: 0 2px 3px #0003;
+}
+.card-top {
+  grid-area: top;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1.5cqw, 8px);
+}
+.day {
+  min-width: 0;
+  font: 400 clamp(12px, 5.8cqw, 28px)/1.1 "Aref Ruqaa", serif;
+  overflow-wrap: anywhere;
+}
+.alarm { display: inline-flex; flex: 0 0 auto; }
+.alarm svg { width: clamp(14px, 6cqw, 28px); height: clamp(14px, 6cqw, 28px); }
+.card-actions { grid-area: actions; display: flex; justify-content: flex-end; gap: clamp(1px, 1cqw, 5px); }
+.card-actions button {
+  display: grid;
+  place-items: center;
+  width: clamp(22px, 10cqw, 44px);
+  height: clamp(24px, 10cqw, 44px);
+  min-height: 0;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+.card-actions svg { width: 80%; height: 80%; }
+.card-actions button:focus-visible { outline: 2px solid var(--navy); }
+.date {
+  grid-area: date;
+  align-self: start;
+  min-width: 0;
+  font: 400 clamp(33px, 19cqw, 92px)/0.95 "Berkshire Swash", cursive;
+}
+.event-title {
+  grid-area: title;
+  align-self: end;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
+  font: 400 clamp(12px, 6.2cqw, 29px)/1.15 "Aref Ruqaa", serif;
+}
+.event-time {
+  grid-area: time;
+  align-self: end;
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font: 600 clamp(11px, 5.2cqw, 25px)/1.15 "Aref Ruqaa", serif;
+}
+
+@media (min-width: 900px) {
+  .events-grid .event-card {
+    width: calc(100% - 4px);
+    justify-self: center;
+  }
+}
